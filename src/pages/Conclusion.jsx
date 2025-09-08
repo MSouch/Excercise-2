@@ -144,10 +144,10 @@ const Conclusion=()=> {
         pdf.text(`Issued to: ${userEmail}`,pageWidth - 15,pageHeight - 30,{align: 'right'})
       }
 
-      // Copyright (bottom center)
-      pdf.setFontSize(8)
-      pdf.setTextColor(107,114,128)
-  pdf.text('© 2025 AP-Learning Systems, a Division of AP-Networks LLC - ALL RIGHTS RESERVED',pageWidth / 2,pageHeight - 10,{align: 'center'})
+  // Copyright (bottom center) - moved up to avoid overlap with inner border
+  pdf.setFontSize(8)
+  pdf.setTextColor(107,114,128)
+  pdf.text('© 2025 AP-Learning Systems, a Division of AP-Networks LLC - ALL RIGHTS RESERVED',pageWidth / 2,pageHeight - 14,{align: 'center'})
 
       console.log('PDF content generated successfully')
 
