@@ -89,7 +89,7 @@ const Conclusion=()=> {
       pdf.text('This certifies that',pageWidth / 2,65,{align: 'center'})
 
       // User name
-      const userName=user?.full_name || user?.user_metadata?.full_name || user?.email || 'Participant'
+  const userName=user?.full_name || user?.user_metadata?.full_name || 'Participant'
       pdf.setFontSize(24)
       pdf.setFont('helvetica','bold')
       pdf.setTextColor(17,24,39)
@@ -136,13 +136,7 @@ const Conclusion=()=> {
       pdf.setTextColor(107,114,128)
       pdf.text('Completion Code: RN0300',15,pageHeight - 20)
 
-      // Certificate verification info (lower right corner)
-      const userEmail=user?.email || user?.user_metadata?.email || ''
-      if (userEmail) {
-        pdf.setFontSize(8)
-        pdf.setTextColor(107,114,128)
-        pdf.text(`Issued to: ${userEmail}`,pageWidth - 15,pageHeight - 30,{align: 'right'})
-      }
+      // Certificate verification info (lower right corner) - email removed for privacy
 
   // Copyright (bottom center) - moved up to avoid overlap with inner border
   pdf.setFontSize(8)
@@ -162,7 +156,7 @@ const Conclusion=()=> {
       // Save certificate info to localStorage
       const certificateData={
         user_id: user?.id || 'unknown',
-        user_email: userEmail,
+  // user_email removed for privacy
         user_name: userName,
         certificate_code: 'RN0300',
         score_level: calculateScoreLevel(),
@@ -386,11 +380,7 @@ const Conclusion=()=> {
                 <p className="text-primary-100 text-sm mt-2">
                   Completion Code: RN0300
                 </p>
-                {user?.email && (
-                  <p className="text-primary-100 text-xs mt-2">
-                    Issued to: {user.email}
-                  </p>
-                )}
+                {/* Email removed for privacy */}
               </div>
 
               <div className="space-y-4">
@@ -503,7 +493,7 @@ const Conclusion=()=> {
         <li>• <a className="text-primary-600 hover:underline" href="https://www.ap-networks.com/" target="_blank" rel="noreferrer">Pursue advanced risk management certifications</a></li>
         <li>• <a className="text-primary-600 hover:underline" href="https://www.ap-networks.com/" target="_blank" rel="noreferrer">Lead organizational risk management improvement initiatives</a></li>
         <li>• <a className="text-primary-600 hover:underline" href="https://www.ap-networks.com/" target="_blank" rel="noreferrer">Mentor other planners in risk integration techniques</a></li>
-        <li>• <a className="text-primary-600 hover:underline" href="https://www.ap-networks.com/" target="_blank" rel="noreferrer">Explore other Navigator Series training modules</a></li>
+  <li>• <a className="text-primary-600 hover:underline" href="https://www.ap-networks.com/" target="_blank" rel="noreferrer">Explore other Navigator Series training courses</a></li>
                 </ul>
               </div>
             </div>

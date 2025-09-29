@@ -93,7 +93,9 @@ const ChallengeQuestion = ({challenge, onComplete}) => {
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            {Object.entries(challenge.options).map(([key, option]) => (
+            {['A','B','C','D'].map((key) => {
+              const option = challenge.options[key]
+              return (
               <motion.div
                 key={key}
                 className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
@@ -141,7 +143,8 @@ const ChallengeQuestion = ({challenge, onComplete}) => {
                   )}
                 </div>
               </motion.div>
-            ))}
+              )
+            })}
 
             {!showFeedback && !showModelAnswer && (
               <div className="flex justify-center pt-4">

@@ -1,8 +1,8 @@
 export const exerciseContent = {
   1: {
     id: 1,
-    title: "Comprehensive Risk Assessment Matrix",
-    description: "Apply systematic risk identification to the pump bearing replacement, then integrate controls into work procedures:",
+  title: "Comprehensive Risk Assessment Matrix",
+  description: "Apply systematic risk identification to the pump bearing replacement, then integrate controls into work procedures",
     fields: [
       {
         id: 'safety_risks',
@@ -99,7 +99,7 @@ export const exerciseContent = {
           title: "Systematic Integration Benefits",
           points: [
             "Embedded risk controls prevent execution problems through integrated procedures rather than separate safety documents",
-            "Systematic risk identification from Module 1 combined with maintenance-specific considerations from Module 2 creates comprehensive coverage",
+            "Systematic risk identification from Lesson 1 combined with maintenance-specific considerations from Lesson 2 creates comprehensive coverage",
             "Hold points and verification steps ensure quality while maintaining schedule objectives"
           ]
         }
@@ -115,19 +115,24 @@ export const exerciseContent = {
   2: {
     id: 2,
     title: "Turnaround Risk Contingency Planning",
-    description: "Develop comprehensive contingency plans and decision frameworks for the vessel corrosion risk scenario:",
+  description: "Develop comprehensive contingency plans and decision frameworks for the vessel corrosion risk scenario",
     fields: [
       {
         id: 'scenario_a_probability',
         label: 'Scenario A: Minimal Vessel Work Required - Probability (%)',
         type: 'number',
-        placeholder: 'Enter probability percentage...'
+        min: 0,
+        max: 100,
+        step: 1,
+        placeholder: 'Enter probability percentage'
       },
       {
         id: 'scenario_a_impact',
         label: 'Scenario A: Impact (days delay)',
         type: 'number',
-        placeholder: 'Enter days delay...'
+        min: 0,
+        step: 0.5,
+        placeholder: 'Enter days of delay'
       },
       {
         id: 'scenario_a_resources',
@@ -145,13 +150,18 @@ export const exerciseContent = {
         id: 'scenario_b_probability',
         label: 'Scenario B: Moderate Vessel Modifications - Probability (%)',
         type: 'number',
-        placeholder: 'Enter probability percentage...'
+        min: 0,
+        max: 100,
+        step: 1,
+        placeholder: 'Enter probability percentage'
       },
       {
         id: 'scenario_b_impact',
         label: 'Scenario B: Impact (days delay)',
         type: 'number',
-        placeholder: 'Enter days delay...'
+        min: 0,
+        step: 0.5,
+        placeholder: 'Enter days of delay'
       },
       {
         id: 'scenario_b_resources',
@@ -222,7 +232,7 @@ export const exerciseContent = {
   3: {
     id: 3,
     title: "Interface Risk Management Framework",
-    description: "Develop systematic interface risk identification and coordination protocols for Project Phoenix:",
+  description: "Develop systematic interface risk identification and coordination protocols for Project Phoenix",
     fields: [
       {
         id: 'org_interface_1',
@@ -323,7 +333,7 @@ export const exerciseContent = {
   4: {
     id: 4,
     title: "Risk Management Capability Development System",
-    description: "Design a comprehensive system that captures lessons learned, measures performance, and develops organizational capability:",
+  description: "Design a comprehensive system that captures lessons learned, measures performance, and develops organizational capability",
     fields: [
       {
         id: 'feedback_collection',

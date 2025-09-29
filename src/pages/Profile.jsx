@@ -50,7 +50,7 @@ const Profile=()=> {
                 <h2 className="text-lg font-semibold text-gray-900">
                   {user?.user_metadata?.full_name || 'User'}
                 </h2>
-                <p className="text-gray-600 text-sm">{user?.email}</p>
+                {/* Email removed for privacy */}
               </div>
 
               <nav className="space-y-2">
@@ -94,13 +94,7 @@ const Profile=()=> {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <SafeIcon icon={FiMail} className="w-5 h-5 text-gray-400" />
-                      <div>
-                        <p className="text-sm text-gray-600">Email</p>
-                        <p className="font-medium text-gray-900">{user?.email}</p>
-                      </div>
-                    </div>
+                    {/* Email section removed for privacy */}
                     <div className="flex items-center space-x-3">
                       <SafeIcon icon={FiCalendar} className="w-5 h-5 text-gray-400" />
                       <div>

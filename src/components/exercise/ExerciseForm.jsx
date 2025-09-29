@@ -192,8 +192,9 @@ const ExerciseForm=({exercise,onComplete})=> {
             <input
               id={field.id}
               type="number"
-              min="1"
-              max="10"
+              min={field.min !== undefined ? field.min : undefined}
+              max={field.max !== undefined ? field.max : undefined}
+              step={field.step !== undefined ? field.step : 'any'}
               value={value}
               onChange={(e)=> handleInputChange(field.id,e.target.value)}
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent ${

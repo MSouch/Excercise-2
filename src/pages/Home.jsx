@@ -62,7 +62,7 @@ const Home=()=> {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Mission</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Navigate four critical risk management scenarios using systematic approaches to prevent safety incidents,equipment failures,and production losses while building organizational risk management capability.
+              Navigate four critical risk management scenarios using systematic approaches to prevent safety incidents, equipment failures, and production losses while building organizational risk management capability.
             </p>
           </motion.div>
 
@@ -81,7 +81,7 @@ const Home=()=> {
               {
                 icon: FiAward,
                 title: 'Multi-Context Risk Adaptation',
-                description: 'Adapt risk management approaches across maintenance,turnaround,and capital projects'
+                description: 'Adapt risk management approaches across maintenance, turnaround, and capital projects'
               },
               {
                 icon: FiClock,
