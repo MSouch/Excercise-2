@@ -23,7 +23,7 @@ const SIMULATION_CONFIG = {
   medallionImage: medallionImage,
   
   shareText: {
-    message: 'I just earned the Risk Navigator Expert Digital Credential! 🏆',
+    message: 'I just completed the Risk Navigator simulation and earned the Risk Navigator Expert certificate!',
     hashtags: '#RiskManagement #IndustrialSafety #ProfessionalDevelopment',
     url: 'https://ap-networks.com/learning-systems'
   },
@@ -128,14 +128,34 @@ const Conclusion=()=> {
     })
   }
 
-  const copyShareText=()=> {
+  const copyShareText=async ()=> {
     const shareText=`${SIMULATION_CONFIG.shareText.message}\n\n${SIMULATION_CONFIG.shareText.hashtags}`
     try {
-      navigator.clipboard.writeText(shareText)
+      await navigator.clipboard.writeText(shareText)
       setCopiedShareText(true)
       setTimeout(()=> setCopiedShareText(false),2000)
     } catch (err) {
-      alert(shareText)
+      // Fallback for browsers that don't support Clipboard API
+      try {
+        const textArea=document.createElement('textarea')
+        textArea.value=shareText
+        textArea.style.position='fixed'
+        textArea.style.left='-999999px'
+        textArea.style.top='-999999px'
+        document.body.appendChild(textArea)
+        textArea.focus()
+        textArea.select()
+        const successful=document.execCommand('copy')
+        document.body.removeChild(textArea)
+        if (successful) {
+          setCopiedShareText(true)
+          setTimeout(()=> setCopiedShareText(false),2000)
+        } else {
+          alert(shareText)
+        }
+      } catch (fallbackErr) {
+        alert(shareText)
+      }
     }
   }
 
